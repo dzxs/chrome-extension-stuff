@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "瞎几把写",
+  "version": "1.0.0",
+  "description": "瞎几把写",
+  "browser_action": {
+    "default_icon": "res/off.png",
+    "default_title": "瞎几把写",
+    "default_popup": "popup.html"
+  },
+  "author": "d2x3 <d2x3@outlook.com>",
+  "icons": {
+    "128": "res/off.png"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+    "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/jquery.min.js", "js/contentScript.js"]
+
+    }
+  ],
+  "permissions": ["notifications", "activeTab", "declarativeContent", "storage", "tabs", "http://*/*", "https://*/*"],
+  "web_accessible_resources": ["js/injectedScript.js"]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "瞎几把写",
+  "version": "1.0.0",
+  "description": "瞎几把写",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "d2x3 <d2x3@outlook.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "grunt": "^1.0.3",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.0"
+  }
+}
