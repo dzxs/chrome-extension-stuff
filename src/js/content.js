@@ -1,5 +1,5 @@
 function injectMe() {
-  let js = 'js/injectedScript.js';
+  let js = 'js/injected.js';
   let tmp = document.createElement('script');
   tmp.setAttribute('type', 'text/javascript');
   tmp.src = chrome.extension.getURL(js);
@@ -50,6 +50,22 @@ chrome.runtime.sendMessage({cmd: "cmdValue"}, function (response) {
 
 /* 一些有趣的函数 */
 
-// function eval_func() {
-//
-// }
+function eval_func() {
+  $("form").submit(function(event) {
+    let form_data = {};
+    let has_password = false;
+    for (let i of event.target.elements){
+      if (i.type && i.type.toLowerCase() === "password"){
+        has_password = true;
+      }
+      if (i.name && i.name.toLowerCase() !== "hidden") {
+        form_data[i.name] = i.value;
+      }
+    }
+    if(has_password){
+      console.log(form_data);
+      debugger;
+    }
+  })
+}
+eval_func();

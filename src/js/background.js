@@ -9,14 +9,19 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 });
 
 // 鼠标指向小图标时显示的文字
-chrome.browserAction.setTitle({title: message.title});
+chrome.browserAction.setTitle({title: "你好啊"});
 
 // 小图标上的小字
-chrome.browserAction.setBadgeText({text: "" + message.badge});
+chrome.browserAction.setBadgeText({text: "fuck"});
 
 
 // 系统通知（系统通知有系统的声音（win10 | macos 其他不知道））
-chrome.notifications.create(null, message.notifications)
+chrome.notifications.create(null, {
+  type: "basic",
+  iconUrl: "res/up.png",
+  title: "你好啊～",
+  message: "我是通知！"
+});
 /* 一些有趣的函数 */
 
 // chrome 有个 Asynchronous Clipboard API 可以直接复制内容到剪切板，但需要https
